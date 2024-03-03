@@ -1,0 +1,28 @@
+set ideajoin
+let mapleader = " "
+set clipboard+=unnamed
+
+set ignorecase " Ignore case when searching
+set smartcase " If there is an uppercase in y
+
+" Plugins ====================
+set NERDTree
+
+"Keymaps =====================
+"
+inoremap jk <esc>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gr :action FindUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+
+" nerdtree
+nnoremap <leader>ee :NERDTreeToggle<CR>
+nnoremap <leader>ef :NERDTreeFocus<CR>
+nnoremap <leader>et :NERDTreeFind<CR>
+
+"
+nnoremap <leader>rio :action OptimizeImports<CR>
+nnoremap <leader>rr :action RenameElement<CR>
+
+" Comment
+nnoremap <leader>cc :action CommentByLineComment<CR>
