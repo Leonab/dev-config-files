@@ -23,6 +23,7 @@ nnoremap <leader>et :NERDTreeFind<CR>
 "
 nnoremap <leader>rio :action OptimizeImports<CR>
 nnoremap <leader>rr :action RenameElement<CR>
+nnoremap <leader>rf :action ReformatCode<CR>
 
 " Comment
 nnoremap <leader>cc :action CommentByLineComment<CR>
