@@ -41,3 +41,12 @@ keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagn
 keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Buffers
+keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Go to [B]uffer [N]ext" })
+keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Go to [B]uffer [P]rev" })
+
+-- Tabs
+keymap.set("n", "<leader>tn", "<cmd>tabnext<CR>", { desc = "Got to [T]ab [N]ext" })
+keymap.set("n", "<leader>tp", "<cmd>tabprevious<CR>", { desc = "Got to [T]ab [P]rev" })
+keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Got to [T]ab [C]lose" })

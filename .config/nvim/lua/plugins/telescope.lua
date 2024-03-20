@@ -34,9 +34,9 @@ return {
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 
-		keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+		keymap.set("n", "<leader>fsk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 
-		keymap.set("n", "<leader>sn", function()
+		keymap.set("n", "<leader>fsn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
 	end,
