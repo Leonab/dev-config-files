@@ -37,6 +37,8 @@ return {
 					"python",
 					"go",
 					"vimdoc",
+					"rust",
+					"toml",
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				ts_context_commentstring = {
