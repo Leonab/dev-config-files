@@ -117,3 +117,23 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ---- FZF -----
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+# Git search
+source ~/fzf-git.sh/fzf-git.sh
+
+# Git commands
+alias gl='git pull'
+alias gp='git push'
+alias gs='git status'
+alias gb='git branch'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'

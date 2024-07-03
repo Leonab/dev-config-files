@@ -4,6 +4,7 @@
 !/.config/
 .config/iterm2/
 .config/coc/
+.config/tuist/
 !.zshrc
 !.tmux.conf
 !.ideavimrc
