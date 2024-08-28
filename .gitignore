@@ -5,6 +5,7 @@
 .config/iterm2/
 .config/coc/
 .config/tuist/
+.config/yarn/*
 !.zshrc
 !.tmux.conf
 !.ideavimrc
