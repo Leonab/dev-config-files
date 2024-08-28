@@ -31,7 +31,6 @@ return {
 				"tsserver",
 				"lua_ls",
 				"pyright",
-				"gopls",
 				"clangd",
 			},
 			-- auto-install configured servers (with lspconfig)
