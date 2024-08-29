@@ -137,3 +137,8 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
+
+
+# Yarn alias
+alias yp='yarn && yarn package'
+alias ylf='yarn lint-fix'
