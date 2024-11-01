@@ -6,6 +6,7 @@
 .config/coc/
 .config/tuist/
 .config/yarn/*
+.config/qB*
 !.zshrc
 !.tmux.conf
 !.ideavimrc
