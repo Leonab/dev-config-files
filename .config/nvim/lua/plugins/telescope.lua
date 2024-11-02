@@ -5,6 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
+		"nvim-telescope/telescope-symbols.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -14,6 +15,9 @@ return {
 		telescope.setup({
 			defaults = {
 				path_display = { "smart" },
+				preview = {
+					filesize_limit = 0.1, -- MB
+				},
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -43,5 +47,7 @@ return {
 		keymap.set("n", "<leader>fsn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+
+		keymap.set("n", "<leader>fy", "<cmd>Telescope symbols<cr>", { desc = "Find symbols/emojis" })
 	end,
 }
