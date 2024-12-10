@@ -89,6 +89,7 @@ return {
 
 		lspconfig["graphql"].setup({
 			capabilities = capabilities,
+			on_attach = on_attach,
 			filetypes = { "graphql", "gql" },
 		})
 

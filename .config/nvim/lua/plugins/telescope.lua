@@ -14,7 +14,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				path_display = { "smart" },
+				path_display = { "truncate" },
 				preview = {
 					filesize_limit = 0.1, -- MB
 				},
