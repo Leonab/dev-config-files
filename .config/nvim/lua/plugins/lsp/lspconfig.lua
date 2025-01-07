@@ -87,6 +87,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["elixirls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "elixir-ls" },
+		})
+
 		lspconfig["graphql"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
