@@ -82,6 +82,21 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["pylsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = {
+				pylsp = {
+					plugins = {
+						pycodestyle = {
+							ignore = { "W391" },
+							maxLineLength = 100,
+						},
+					},
+				},
+			},
+		})
+
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,

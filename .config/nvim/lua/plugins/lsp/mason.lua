@@ -31,6 +31,8 @@ return {
 				"tsserver",
 				"lua_ls",
 				"pyright",
+				"pylsp",
+				"gopls",
 				"clangd",
 				"graphql",
 				"gopls",
