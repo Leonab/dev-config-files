@@ -11,6 +11,11 @@ local keymap = vim.keymap -- for conciseness
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- copy current filepath [relative]
+keymap.set("n", "<leader>cpp", function()
+  vim.fn.setreg("+", vim.fn.expand("%"))
+end, { desc = "Copy relative file path" })
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>cc", "<C-^>", { desc = "Quick toggle files" })

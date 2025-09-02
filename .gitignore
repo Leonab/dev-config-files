@@ -8,6 +8,10 @@
 .config/yarn/*
 .config/qB*
 .config/raycast/*
+.config/better-auth/*
+.config/configstore/*
+.config/fish/*
+.config/uv/*
 !.zshrc
 !.tmux.conf
 !.ideavimrc
