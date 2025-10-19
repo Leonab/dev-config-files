@@ -56,3 +56,8 @@ keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Go to [B]uffer [P]
 keymap.set("n", "<leader>tn", "<cmd>tabnext<CR>", { desc = "Got to [T]ab [N]ext" })
 keymap.set("n", "<leader>tp", "<cmd>tabprevious<CR>", { desc = "Got to [T]ab [P]rev" })
 keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Got to [T]ab [C]lose" })
+
+-- Lua
+keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
+keymap.set("n", "<leader>x", ":.lua<CR>")
+keymap.set("v", "<leader>x", ":lua<CR>")
