@@ -1,0 +1,36 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"autoupdate": true,
+	"permission": {
+		"bash": {
+			"*": "allow",
+			"git add *": "deny",
+			"git commit *": "deny",
+			"git push *": "deny"
+		}
+	},
+	"mcp": {
+		"aws-knowledge-mcp-server": {
+			"url": "https://knowledge-mcp.global.api.aws",
+			"type": "remote",
+			"enabled": true
+		},
+		"better-auth": {
+			"url": "https://mcp.better-auth.com/mcp",
+			"type": "remote",
+			"enabled": true
+		},
+		"chrome-devtools": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"chrome-devtools-mcp@latest",
+				"--no-usage-statistics"
+			]
+		}
+	},
+	"server": {
+		"mdns": true
+	}
+}
