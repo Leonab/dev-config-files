@@ -23,6 +23,14 @@ brew install fzf
 ```
 
 ```bash
+brew install zoxide
+```
+
+```bash
+brew install bun
+```
+
+```bash
 nvm install --lts
 ```
 
