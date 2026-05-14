@@ -1,0 +1,6 @@
+[push]
+	autoSetupRemote = true
+[credential]
+	helper = store
+[alias]
+	lg = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'

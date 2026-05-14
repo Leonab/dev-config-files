@@ -135,6 +135,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias glg='git lg'
 
 
 # Yarn alias
@@ -159,8 +160,6 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator 
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-. "$HOME/.local/bin/env"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
