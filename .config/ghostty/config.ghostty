@@ -1,4 +1,3 @@
-shell-integration = zsh
 theme = Belafonte Day
 background-opacity = 0.9
 background-blur = true

@@ -1,0 +1,46 @@
+# ════════════════════════════════════════════════════════════════════
+# Belafonte Day theme for tmux-themepack
+# Palette: https://cmuxthemes.com/themes/belafonte-day
+# Base:    powerline/default/blue (set via @themepack in .tmux.conf)
+#
+# How it works: tmux-themepack sets every option with `set -goq`, where
+# -o means "only set if not already set". This file is sourced from
+# .tmux.conf BEFORE tpm initializes tmux-themepack, so the values below
+# are already set and the base theme keeps them.
+# ════════════════════════════════════════════════════════════════════
+
+# ── Belafonte Day palette → powerline color slots ───────────────────
+set -g @powerline-color-main-1  "#426a79"   # blue        – primary accent
+set -g @powerline-color-main-2  "#d5ccba"   # canvas      – text on accent
+set -g @powerline-color-main-3  "#d08b30"   # yellow
+set -g @powerline-color-black-1 "#20111b"   # near-black  – text on blue (msg/mode)
+set -g @powerline-color-grey-1  "#d5ccba"   # canvas      – status background
+set -g @powerline-color-grey-2  "#968c83"   # gray        – sub-area background
+set -g @powerline-color-grey-3  "#968c83"   # gray        – pane border
+set -g @powerline-color-grey-4  "#45373c"   # foreground  – status text
+set -g @powerline-color-grey-5  "#5e5252"   # dim text
+set -g @powerline-color-grey-6  "#97522c"   # brown       – right-most accent / activity
+
+# ── Status-left segments: session → user → pane ─────────────────────
+set -g @powerline-status-left-area-left-bg    "#426a79"   # blue
+set -g @powerline-status-left-area-left-fg    "#d5ccba"   # canvas
+set -g @powerline-status-left-area-middle-bg  "#97522c"   # brown
+set -g @powerline-status-left-area-middle-fg  "#d5ccba"   # canvas
+set -g @powerline-status-left-area-right-bg   "#5e5252"   # dark gray
+set -g @powerline-status-left-area-right-fg   "#d5ccba"   # canvas
+
+# ── Status-right segments: time → date → host ───────────────────────
+set -g @powerline-status-right-area-left-bg    "#5e5252"  # dark gray
+set -g @powerline-status-right-area-left-fg    "#d5ccba"  # canvas
+set -g @powerline-status-right-area-middle-bg  "#d08b30"  # yellow
+set -g @powerline-status-right-area-middle-fg  "#45373c"  # dark text (readable on yellow)
+set -g @powerline-status-right-area-right-bg   "#97522c"  # brown
+set -g @powerline-status-right-area-right-fg   "#d5ccba"  # canvas
+
+# ── Active window: blue block with canvas text ──────────────────────
+set -g @theme-window-status-current-bg "#426a79"
+set -g @theme-window-status-current-fg "#d5ccba"
+
+# ── Pane-number overlay (prefix q): visible on the light canvas bg ──
+set -g @theme-display-panes-colour         "#968c83"   # gray
+set -g @theme-display-panes-active-colour  "#97522c"   # brown
