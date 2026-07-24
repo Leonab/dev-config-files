@@ -158,7 +158,7 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator 
+export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # bun completions
@@ -170,6 +170,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias oc='opencode'
 export EDITOR=nvim
+export XDG_CONFIG_HOME="$HOME/.config"
 
 eval "$(zoxide init zsh)"
 alias cd='z'

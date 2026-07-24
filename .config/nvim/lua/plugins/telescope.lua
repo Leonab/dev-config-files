@@ -6,39 +6,50 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
     "nvim-telescope/telescope-symbols.nvim",
+    { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local builtin = require("telescope.builtin")
+    local lga = require("telescope").extensions.live_grep_args
+    local lga_actions = require("telescope-live-grep-args.actions")
 
     telescope.setup({
       defaults = {
+        file_ignore_patterns = { "package-lock.json", "bun.lock" },
         path_display = { "truncate" },
         preview = {
           filesize_limit = 0.1, -- MB
         },
         extensions = {
           fzf = {},
+          live_grep_args = {
+            auto_quoting = true,
+          },
         },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["jk"] = "close",
+            ["<C-u>"] = lga_actions.quote_prompt(),
           },
         },
       },
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("live_grep_args")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
     keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap.set("n", "<leader>fs", lga.live_grep_args, { desc = "Live Grep with Args" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     keymap.set("n", "<leader>fsr", "<cmd>Telescope resume<cr>", { desc = "[R]epeat last search" })
 

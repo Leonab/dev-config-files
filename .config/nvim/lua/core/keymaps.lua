@@ -1,8 +1,5 @@
 -- set leader key to space
 vim.g.mapleader = " "
-vim.g.leetcode_browser = "chrome"
-vim.g.leetcode_solution_filetype = "golang"
-
 local keymap = vim.keymap -- for conciseness
 
 ---------------------

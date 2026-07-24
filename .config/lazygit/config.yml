@@ -1,0 +1,18 @@
+gui:
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+  showIcons: true
+sidePanels:
+  # - [status]
+  - [files, worktrees, submodules]
+  - [branches, remotes, tags]
+  - [commits, reflog]
+keybinding:
+  universal:
+    quit: q
+    return: <esc>
+os:
+  edit: "nvim --server $NVIM --remote-send '<cmd>close<cr><cmd>lua EditFromLazygit({{filename}})<CR>'"
+  editAtLine: "nvim --server $NVIM --remote-send '<cmd>close<CR><cmd>lua EditLineFromLazygit({{filename}},{{line}})<CR>'"
