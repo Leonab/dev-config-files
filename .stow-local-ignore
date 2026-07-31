@@ -19,3 +19,8 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+
+\.vscode/extensions.json
+\.idea
+\.DS_Store

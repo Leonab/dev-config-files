@@ -1,5 +1,25 @@
 ### Setup
 
+#### Stow dotfiles
+
+Install GNU Stow:
+
+```bash
+brew install stow
+```
+
+At root of this repo, stow the packages:
+
+```bash
+stow -R .
+```
+
+To remove symlinks:
+
+```bash
+stow -D .
+```
+
 #### Install from Web
 
 - Install `Homebrew`
