@@ -10,6 +10,7 @@ return {
         typescript = { "biome" },
         javascriptreact = { "biome" },
         typescriptreact = { "biome" },
+        astro = { "biome" },
         svelte = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },

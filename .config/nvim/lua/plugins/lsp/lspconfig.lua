@@ -95,6 +95,38 @@ return {
 
     vim.lsp.enable("biome")
 
+    local function get_typescript_tsdk(root_dir)
+      local ts_path = vim.fs.find("node_modules/typescript/lib", {
+        path = root_dir,
+        upward = true,
+      })[1]
+
+      if not ts_path then
+        -- Check project-local or monorepo root node_modules
+        local project_ts = root_dir .. "/node_modules/typescript/lib"
+        local monorepo_ts = root_dir .. "/../../node_modules/typescript/lib" -- adjust depth if needed
+
+        if vim.fn.isdirectory(project_ts) == 1 then
+          return project_ts
+        elseif vim.fn.isdirectory(monorepo_ts) == 1 then
+          return monorepo_ts
+        end
+      end
+
+      return ts_path
+    end
+
+    vim.lsp.config("astro", {
+      on_new_config = function(new_config, new_root_dir)
+        new_config.init_options = new_config.init_options or {}
+        new_config.init_options.typescript = {
+          tsdk = get_typescript_tsdk(new_root_dir),
+        }
+      end,
+      root_markers = { ".git" },
+      filetypes = { "astro" },
+    })
+
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {

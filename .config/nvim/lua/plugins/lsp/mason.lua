@@ -28,6 +28,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- "ts_ls",
+        "astro",
         "biome",
         "lua_ls",
         "pyright",
