@@ -174,3 +174,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 eval "$(zoxide init zsh)"
 alias cd='z'
+
+# AWS granted
+alias assume="source $(brew --prefix)/bin/assume"
+
+eval "$(~/.local/bin/mise activate zsh)"

@@ -1,56 +1,55 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     dependencies = {
-      "windwp/nvim-ts-autotag",
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      { "windwp/nvim-ts-autotag", opts = {} },
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = { enable_autocmd = false },
+      },
     },
     config = function()
-      -- import nvim-treesitter plugin
-      local treesitter = require("nvim-treesitter.configs")
+      local treesitter = require("nvim-treesitter")
 
-      -- configure treesitter
-      treesitter.setup({ -- enable syntax highlighting
-        highlight = {
-          enable = true,
-        },
-        -- enable indentation
-        indent = { enable = true },
-        -- enable autotagging (w/ nvim-ts-autotag plugin)
-        autotag = { enable = true },
-        -- ensure these language parsers are installed
-        ensure_installed = {
-          "astro",
-          "json",
-          "javascript",
-          "typescript",
-          "tsx",
-          "yaml",
-          "markdown",
-          "markdown_inline",
-          "lua",
-          "vim",
-          "gitignore",
-          "c",
-          "cpp",
-          "python",
-          "go",
-          "vimdoc",
-          "rust",
-          "toml",
-          "elixir",
-          "eex",
-          "heex",
-        },
-        -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-        ts_context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
-        -- auto install above language parsers
-        auto_install = true,
+      treesitter.setup({})
+
+      -- Install missing parsers asynchronously; installed parsers are skipped.
+      treesitter.install({
+        "astro",
+        "json",
+        "javascript",
+        "typescript",
+        "tsx",
+        "yaml",
+        "markdown",
+        "markdown_inline",
+        "lua",
+        "vim",
+        "gitignore",
+        "c",
+        "cpp",
+        "python",
+        "go",
+        "vimdoc",
+        "rust",
+        "toml",
+        "elixir",
+        "eex",
+        "heex",
+      })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("UserTreesitter", { clear = true }),
+        callback = function(ev)
+          -- Leave filetypes without an installed parser on their default settings.
+          local ok = pcall(vim.treesitter.start, ev.buf)
+          if ok then
+            vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
       })
     end,
   },
